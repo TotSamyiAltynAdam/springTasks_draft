@@ -18,12 +18,13 @@ public class HomeController {
     }
 
 //    @RequestMapping(method= RequestMethod.POST)
-//    @PostMapping(value = "/addItem")
-//    public String addItem(@RequestParam(name="item_name", defaultValue = "No item") String name,
-//                          @RequestParam(name="item_price",defaultValue = "0") int price){
-//        DBManager.addItem(new Items(null,name,price));
-//        return "redirect:/";
-//    }
+    @PostMapping(value = "/addItem")
+    public String addItem(@RequestParam(name="item_name", defaultValue = "No item") String name,
+                          @RequestParam(name="item_description", defaultValue = "No description") String description,
+                          @RequestParam(name="item_price",defaultValue = "0") int price) {
+        DBManager.addItem(new Items(null,name,description,price));
+        return "redirect:/";
+    }
 
 //    @GetMapping(value="/details/{idshka}")
 //    public String details(Model model, @PathVariable(name="idshka") Long id){

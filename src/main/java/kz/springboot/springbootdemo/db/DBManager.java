@@ -15,9 +15,8 @@ public class DBManager {
         return items;
     }
     public static void addItem(Items item){
-        item.setId(id);
+        item.setId(id++);
         items.add(item);
-        id++;
     }
     public static Items getItem(Long id){
         for(Items it: items){
